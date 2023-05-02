@@ -79,5 +79,3 @@ npm test
 ````
 
 20. Save the job and check its status to see if it worked.
-
-20. 
