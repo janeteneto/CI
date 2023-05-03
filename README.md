@@ -86,7 +86,31 @@ npm test
 2. create the webhook in github for the repo where you have the app code
 3. test the webhook - testing status code 200
 4. Make change to github repo and commit and it will reflect on Jenkins
-5. 
+5. security -> webhooks
 
-git pull
+git chekout dev - change branch
+
+1. create job called janete-ci-merge
+2. create dev branch on localhost and make a change to your readme
+3. push the code to github which should trigger the job
+4. if the tests passed, they should merge the code to main branch
+5. create 3rd job to push code to production
+6. create ec2 instance
+7. create sg rule to allow jenkins ip
+
+create new key for 3rd job
+(same process) 
+put copy command in the execute shell (scp)
+also add the other shell code
+add npm start
+
+ssh into ec2 using pem file
+scp the code
+cd app
+npm install
+npm 
+
+we need only one key pair for the dev branch
+
+
 
