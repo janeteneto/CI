@@ -79,3 +79,14 @@ npm test
 ````
 
 20. Save the job and check its status to see if it worked.
+
+## Webhook Configuration
+
+1. create a webhook for jenkins/end point
+2. create the webhook in github for the repo where you have the app code
+3. test the webhook - testing status code 200
+4. Make change to github repo and commit and it will reflect on Jenkins
+5. 
+
+git pull
+
