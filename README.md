@@ -82,21 +82,28 @@ npm test
 
 ## Webhook Configuration
 
-1. create a webhook for jenkins/end point
-2. create the webhook in github for the repo where you have the app code
-3. test the webhook - testing status code 200
-4. Make change to github repo and commit and it will reflect on Jenkins
-5. security -> webhooks
+1. Create a webhook for jenkins (end point) on Github on the app repo:
 
-git chekout dev - change branch
+![2023-05-03](https://user-images.githubusercontent.com/129942042/235941170-e3b6b2cb-22b0-406b-a88c-8260e8151ea8.png)
 
-1. create job called janete-ci-merge
-2. create dev branch on localhost and make a change to your readme
-3. push the code to github which should trigger the job
-4. if the tests passed, they should merge the code to main branch
-5. create 3rd job to push code to production
-6. create ec2 instance
-7. create sg rule to allow jenkins ip
+2. On the terminal, create a `dev` branch. Remember you need to `cd` into your app repo first and then use the command:
+````
+git checkout -b dev
+````
+
+3. Make change to the app's README file, add, and commit them
+
+4. Run `git merge dev`
+
+5. Create job called janete-ci-merge
+
+5. Run `git push -u origin dev`
+
+9. push the code to github which should trigger the job
+10. if the tests passed, they should merge the code to main branch
+11. create 3rd job to push code to production
+12. create ec2 instance
+13. create sg rule to allow jenkins ip
 
 create new key for 3rd job
 (same process) 
