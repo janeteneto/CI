@@ -37,19 +37,19 @@ sss-keygen -t rsa -b 4096 -C janeteneto26@gmail.com
 
 - Have a repository with the app folder on GitHub ready. I forked someone else's repo.
 
-4. Grab the public key from the terminal by running the command `cat janete-jenkins-key.pub` and copy it to the repo
+4. Grab the public key from the terminal by running the command `cat janete-jenkins-key.pub` and add it to the repo, on the `deploy keys` section.
 
 - Now, on the Jenkins page:
 
-5. Create a new job and name it conveniently
+5. Create a new job and name it conveniently (this will be an agent node)
 
 - On the job's settings:
 
-6. Tick `discard old builds` and set the max # to 3
+6. Tick `discard old builds` and set the max # to 3 or any number you think is appropriate.
 
 7. Tick `Github project` and paste the HTTPS link of your repo
 
-8. On the Office 365 section, tick `Restrict where this project can be run` and type `sparta-ubuntu-node`
+8. On the Office 365 section, tick `Restrict where this project can be run` and type `sparta-ubuntu-node` (or don't if you don't have this option)
 
 9. On the Source Code Management section select `Git` 
 
@@ -93,7 +93,9 @@ git checkout -b dev
 
 3. Make change to the app's README file, add, and commit them
 
-4. Run `git merge dev`
+4. Run `git push -u origin dev` to push the changes
+
+5. Run `git merge dev` to 
 
 5. Create job called janete-ci-merge
 
